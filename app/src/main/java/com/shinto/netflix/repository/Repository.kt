@@ -16,4 +16,8 @@ class Repository {
     suspend fun getUpcoming():Response<MovieResponce>{
         return NetInstance.api.getUpcomingMoview()
     }
+
+    suspend fun nowPlaying():Response<MovieResponce>{
+        return NetInstance.api.getNowPlayingMovie()
+    }
 }

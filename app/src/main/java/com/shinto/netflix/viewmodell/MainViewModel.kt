@@ -12,16 +12,24 @@ class MainViewModel(private val repository: Repository):ViewModel() {
     val popularmoviesLiveData: MutableLiveData<Response<MovieResponce>> = MutableLiveData()
     val getTopRatedMoviewLiveData:MutableLiveData<Response<MovieResponce>> = MutableLiveData()
     val getUpcomingMoviewLiveData:MutableLiveData<Response<MovieResponce>> = MutableLiveData()
+    val nowPlayingMoviesLiveData:MutableLiveData<Response<MovieResponce>> = MutableLiveData()
 
     init {
         popularMovies()
         getTopRatedMovies()
         getUpcomimgMovies()
+        nowPlayingMovies()
     }
     fun popularMovies(){
         viewModelScope.launch {
             val respose: Response<MovieResponce> = repository.getPopular()
             popularmoviesLiveData.value = respose
+        }
+    }
+    fun nowPlayingMovies(){
+        viewModelScope.launch {
+            val responce:Response<MovieResponce> = repository.nowPlaying()
+            nowPlayingMoviesLiveData.value = responce
         }
     }
 

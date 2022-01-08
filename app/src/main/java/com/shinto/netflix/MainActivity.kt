@@ -35,15 +35,14 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
                 ?: return
 
-        val navController = host.navController
-        var actionBar=supportActionBar
+//        val navController = host.navController
+//        val actionBar=supportActionBar
+//        actionBar!!.setBackgroundDrawable(ColorDrawable(Color.BLACK))
+//        setupActionBarWithNavController(navController)
 
-        actionBar!!.setBackgroundDrawable(ColorDrawable(Color.BLACK))
-        setupActionBarWithNavController(navController)
-
-        val repository = Repository()
-        val viewModelFactory = MainViewModelFactory(repository)
-        viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
+//        val repository = Repository()
+//        val viewModelFactory = MainViewModelFactory(repository)
+//        viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
       //  viewModel.
     }
 

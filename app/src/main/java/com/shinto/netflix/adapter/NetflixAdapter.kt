@@ -46,7 +46,7 @@ class NetflixAdapter:RecyclerView.Adapter<NetflixAdapter.NetflixViewHolder>() {
             onItemClickListener?.let { it(imageDiff) }
         }
     }
-    private var onItemClickListener:((Result)->Unit)?=null
+    private var onItemClickListener:((Result)->Unit)? =null
 
     fun setOnClickListner(listener:(Result)->Unit){
         onItemClickListener=listener

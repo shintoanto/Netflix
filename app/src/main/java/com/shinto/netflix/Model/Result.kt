@@ -1,5 +1,9 @@
 package com.shinto.netflix.Model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class Result(
     val adult: Boolean,
     val backdrop_path: String,
@@ -12,4 +16,4 @@ data class Result(
     val title: String,
     val video: Boolean,
     val vote_count: Int
-)
+):Parcelable

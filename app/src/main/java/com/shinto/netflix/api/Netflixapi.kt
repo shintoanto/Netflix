@@ -21,4 +21,9 @@ interface Netflixapi {
     suspend fun getUpcomingMoview(
         @Query("api_key") apiKey: String = API_KEY
     ):Response<MovieResponce>
+
+    @GET("now_playing?")
+    suspend fun getNowPlayingMovie(
+        @Query("api_key") apiKey: String = API_KEY
+    ):Response<MovieResponce>
 }
