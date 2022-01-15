@@ -21,11 +21,6 @@
         android:name="com.shinto.netflix.fragment.MovieScreen"
         android:label="fragment_movie_screen"
         tools:layout="@layout/fragment_movie_screen" >
-        <action
-            android:id="@+id/action_movieScreen_to_homeFragment"
-            app:destination="@id/homeFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim" />
         <argument
             android:name="movieResult"
             app:argType="com.shinto.netflix.Model.Result" />

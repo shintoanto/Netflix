@@ -20,6 +20,7 @@ class MainViewModel(private val repository: Repository):ViewModel() {
         getUpcomimgMovies()
         nowPlayingMovies()
     }
+
     fun popularMovies(){
         viewModelScope.launch {
             val respose: Response<MovieResponce> = repository.getPopular()

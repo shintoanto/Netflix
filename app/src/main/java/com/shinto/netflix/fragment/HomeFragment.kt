@@ -48,9 +48,7 @@ class HomeFragment : Fragment() {
                     }
                 }
             }
-
         })
-
 
         viewModel.popularmoviesLiveData.observe(viewLifecycleOwner, { responce ->
             if (responce.isSuccessful) {
