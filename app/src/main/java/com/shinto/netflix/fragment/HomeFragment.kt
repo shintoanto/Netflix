@@ -18,7 +18,9 @@ import com.shinto.netflix.databinding.FragmentHomeBinding
 import com.shinto.netflix.repository.Repository
 import com.shinto.netflix.viewmodell.MainViewModel
 import com.shinto.netflix.viewmodell.MainViewModelFactory
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
 
     lateinit var navController: NavController

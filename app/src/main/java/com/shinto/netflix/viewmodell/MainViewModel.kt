@@ -7,8 +7,9 @@ import com.shinto.netflix.Model.MovieResponce
 import com.shinto.netflix.repository.Repository
 import kotlinx.coroutines.launch
 import retrofit2.Response
+import javax.inject.Inject
 
-class MainViewModel(private val repository: Repository):ViewModel() {
+class MainViewModel @Inject constructor(private val repository: Repository):ViewModel() {
     val popularmoviesLiveData: MutableLiveData<Response<MovieResponce>> = MutableLiveData()
     val getTopRatedMoviewLiveData:MutableLiveData<Response<MovieResponce>> = MutableLiveData()
     val getUpcomingMoviewLiveData:MutableLiveData<Response<MovieResponce>> = MutableLiveData()
