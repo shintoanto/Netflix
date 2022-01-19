@@ -1,7 +1,10 @@
 package com.shinto.netflix.api
 
+import android.app.Application
+import androidx.room.Room
 import com.google.android.datatransport.runtime.dagger.Module
 import com.google.android.datatransport.runtime.dagger.Provides
+import com.shinto.netflix.NetflixDatabase
 import com.shinto.netflix.utils.Constants.Companion.BASE_URL
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
@@ -31,8 +34,11 @@ object NetInstance {
     fun retrofitapi(retrofit: Retrofit): Netflixapi =
         retrofit.create(Netflixapi::class.java)
 
-//    val api: Netflixapi by lazy {
+    //    val api: Netflixapi by lazy {
 //        retrofit.create(Netflixapi::class.java)
 //    }
-
+    @Provides
+    @Singleton
+    fun providesDatabase(app: Application): NetflixDatabase =
+        Room.databaseBuilder(app, NetflixDatabase::class.java, "netflixdatabase_class").build()
 }
